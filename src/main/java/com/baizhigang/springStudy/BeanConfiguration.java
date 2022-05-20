@@ -1,5 +1,6 @@
 package com.baizhigang.springStudy;
 
+import com.baizhigang.springStudy.factoryBean.Apple;
 import com.baizhigang.springStudy.factoryBean.MyFactoryBean;
 import com.baizhigang.springStudy.zhuru.AutoTest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,4 +18,9 @@ public class BeanConfiguration  {
 //    public MyFactoryBean myFactoryBean(){
 //        return new MyFactoryBean();
 //    }
+
+//    @Bean("app")
+    public Apple apple(){
+        return new Apple();
+    }
 }

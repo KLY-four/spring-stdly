@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 
 @Component
-public class AutoTestImpl1 implements AutoTest{
+public class AutoTestImpl1 extends Apple implements AutoTest{
 
 //    @Autowired
 //    Apple apple;

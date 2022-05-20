@@ -6,6 +6,7 @@ import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -16,11 +17,15 @@ import javax.annotation.PreDestroy;
  * @PostConstruct 和 @PreDestroy 注解是java的jsr250规范提供的，并不属于Spring。
  * 但是该注解如果想被解析，也必须借助扫描器，如ComponentScan
  * */
-@Component
+@Component("app")
+@Lazy
 public class Apple implements ApplicationContextAware, BeanNameAware {
 
-    @Autowired
+//    @Autowired
     AutoTest autoTest;
+//
+//    @Autowired
+    MyFactoryBean myFactoryBean;
 
     public Apple(){
         System.out.println("Apple construct ..");
@@ -28,7 +33,8 @@ public class Apple implements ApplicationContextAware, BeanNameAware {
 
     @PostConstruct
     public void MyInit(){
-        System.out.println("init ...");
+        System.out.println("init ...apple");
+        System.out.println(myFactoryBean +"?????????");
     }
 
     @PreDestroy
